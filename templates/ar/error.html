@@ -1,0 +1,25 @@
+<!doctype html>
+<html class="no-js" lang="ar" dir="rtl">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title> خطأ | صفحة غير موجودة</title>
+   {{ template "loadcss.html" . }}
+</head>
+<body>
+   {{ template "top-bar.html" . }}   
+ <div class="grid-container">
+<div class="grid-x">
+	 <font color="red" style="font-size:100%;">
+<h1 style="" color="red"><b>خطأ</b></h1>
+    </font>
+</div>
+<div class="grid-x"> 
+<p>هذه الصفحة غير موجودة. تأكد من الرابط.</p>
+</div>
+
+</div>
+   {{ template "footer.html" . }}  
+<!-- placed at the end for faster loading -->
+   {{ template "loadjs.html" . }}    
+</body>
+</html>

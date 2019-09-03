@@ -1,0 +1,213 @@
+/* to-do: get rid of !important when possible */
+@font-face {
+    /* https://stackoverflow.com/questions/2436749/how-to-add-multiple-font-files-for-the-same-font */
+    font-family: 'NotoNaskh';
+    src: url('fonts/NotoNaskhArabic-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "NotoNaskh";
+    src: url('fonts/NotoNaskhArabic-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'NotoSansArabic';
+    src: url('fonts/NotoSansArabic-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NotoSansArabic';
+    src: url('fonts/NotoSansArabic-SemiBold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'NotoSansArabic';
+    src: url('fonts/NotoSansArabic-Bold.ttf') format('truetype');
+    font-weight: 900;
+}
+
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: 900;
+}
+
+
+@font-face {
+    font-family: 'IBMPlex';
+    src: url('fonts/IBMPlexSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'IBMPlex';
+    src: url('fonts/IBMPlexSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+
+}
+
+
+body{
+	 font-family: 'IBMPlex','NotoNaskh' !important;
+}
+
+table.dataTable tbody tr {
+    background-color: #fff !important;
+}
+tbody, thead{
+  border: none !important; 
+  background-color: #fff !important;
+
+}
+
+label , input, textarea, span, p, .post-container li {
+	 font-size: 110% !important;
+}
+
+button {
+   font-size: 115% !important;
+   font-weight: bold;
+}
+
+
+label.middle {
+    padding: .2rem 0;
+}
+
+
+p {
+    margin: .2em;
+    line-height: 1.5 !important
+}
+
+.editor_root {
+  font-family: 'IBMPlex','NotoNaskh' !important;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
+	 font-family: 'Montserrat','NotoSansArabic' !important;
+}
+h1 , .h1 {
+    font-weight: 900;
+}
+
+h2 , .h2 {
+    font-weight: bold;
+}
+
+h3 , .h3 {
+    font-weight: 400;
+}
+
+.top-bar, .top-bar ul {
+    background-color: white;
+}
+
+.top-bar, .top-bar-right{
+     font-family: 'Montserrat','NotoSansArabic' !important;
+    font-size: 120% !important;
+
+}
+.bar-padding{
+  padding: 0.5rem 1.5rem;
+}
+@media(min-width:320px) {
+     h1 {
+        font-size: 24px !important;
+    }
+     h2 {
+        font-size: 22px !important;
+    }
+    h3 {
+        font-size: 14px !important;
+    }
+    h4{
+        font-size: 11px !important;
+    }
+}
+
+@media(min-width:600px) {
+    h1 {
+        font-size: 30px !important;
+    }
+  h2 {
+        font-size: 26px !important;
+    }
+   h3 {
+        font-size: 17px !important;
+    }
+   h4{
+        font-size: 13px !important;
+}
+.editor_root {
+  height: 90vh !important;
+  font-family: 'IBMPlex','NotoNaskh' !important;
+}
+.editor_content{
+  height: 77vh !important;
+}
+}
+
+@media(min-width:801px) {
+    h1 {
+        font-size: 27px !important;
+    }
+    h2 {
+        font-size: 24px !important;
+    }
+    h3 {
+        font-size: 19px !important;
+    }
+    h4{
+        font-size: 15px !important;
+    }
+}
+
+.post-title, img, .editor_toolbar{
+        text-align: center;
+display: block;
+   margin: auto;
+   font-family: inherit !important;
+}
+.footnotes {
+    font-size: 65%;
+}
+.excerpt {
+    margin-top: -0.4em;
+    font-size: 90% !important;
+}
+
+.no-bullet {
+    list-style-type: none !important
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body, html {
+  height: auto;
+}
+body {
+  margin-bottom: 6em;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+}
+footer{
+  position: absolute; 
+  padding: 10px;
+  bottom: 0;
+  width: 100%;
+  font-size: 80% !important ;
+}

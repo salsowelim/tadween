@@ -1,0 +1,31 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title> About </title>
+   {{ template "loadcss.html" . }}
+</head>
+<body>
+   {{ template "top-bar.html" . }} 
+
+
+<div class="grid-container">
+      <div class="row">
+      <h2> About</h2>
+       <div style="border-bottom: 1px solid #cccccc;width: 2em;"> </div>
+    </div>
+    <div class="grid-x grid-margin-x">
+     <div class="cell small-12 medium-12 large-12">
+       <br>
+      <p>
+          {{.Article }}
+        </p>
+     </div> 
+</div>
+
+</div>
+   {{ template "footer.html" . }}  
+<!-- placed at the end for faster loading -->
+   {{ template "loadjs.html" . }}    
+</body>
+</html>

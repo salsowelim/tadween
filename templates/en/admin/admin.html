@@ -1,0 +1,90 @@
+<!doctype html>
+<html dir="ltr">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title> Control Panel </title>
+     {{ template "loadcss.html" . }}  
+ <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/zf/dt-1.10.16/r-2.2.0/datatables.min.css"/>
+<style type="text/css">
+	table.dataTable tr.parent td{
+   border-bottom:  0px !important;
+}
+table.dataTable td {
+   border-bottom: 1px solid #dfdfdf;
+
+}
+table.dataTable thead th {
+    border-bottom: 1px solid #1c1c1c !important;
+}
+</style>
+</head>
+
+<body>
+
+ {{ template "top-bar.html" . }}   
+
+<br>
+<div class="grid-container">
+
+<div class="row">
+<h1> Posts</h1>
+</div>
+
+<br>
+<div class="grid-x grid-margin-x">
+<div class="cell small-12 medium-8 large-6">
+<div class="callout primary" style="font-size: 90%;">
+  <p><span style="font-weight: bold;"> Note:</span>  To edit a published post follow the title link</p>
+</div>
+</div>
+</div>
+
+
+<div class="grid-x">
+<table id="postslist" class="dataTable row-border" 
+  style="width: 100%; font-size: 107%;" cellspacing="0"  
+  role="grid">
+<thead>
+      <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Publish date</th>
+      </tr>
+ </thead>
+<tbody>
+       {{ .List }}
+</tbody>
+
+</table>
+</div>
+
+
+<br>
+
+<div class="grid-x align-center">
+	<div class="cell shrink">
+     <button type="submit" onclick = "window.location.href='/addpost/'" id="button" class="large button expanded">New Post</button>  
+     </div> 
+</div>
+<br>
+
+
+</div>
+ {{ template "footer.html" . }} 
+<!-- placed at the end for faster loading -->
+ {{ template "loadjs.html" . }}  
+ <script type="text/javascript" src="https://cdn.datatables.net/v/zf/dt-1.10.16/r-2.2.0/datatables.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.10.15/sorting/date-uk.js"></script>
+<script>
+ $('#postslist').DataTable( {
+        "paging":   true,
+        "ordering": true,
+        "lengthChange": false,
+        "info": false,
+        "searching": true,
+     columnDefs: [
+       { type: 'date-uk', targets: 2 }
+     ]
+    } ); 
+</script>
+</body>
+</html>

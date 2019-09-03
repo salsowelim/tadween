@@ -1,0 +1,183 @@
+<!doctype html>
+<html dir="rtl">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <head>
+  <title> تعديل تدوينة </title>
+   {{ template "loadcss.html" . }} 
+</head>
+
+<body>
+
+ {{ template "top-bar.html" . }}   
+
+<br>
+<form id="postform" role="form" method="POST" autocomplete="off" novalidate>
+<div class="grid-container">
+<div class="row">
+<h1> تعديل تدوينة
+<small>رقم {{ .T_id}}</small>
+</h1>
+</div>
+{{if .IsError}}
+<div class="grid-x grid-margin-x">
+<div class="cell small-12 medium-8 large-5">
+<div class="callout alert" style="font-size: 90%;">
+ <h5> خطأ </h5>
+  <strong> {{ .ErrorMsg}}  </strong>
+</div>
+</div>
+</div>
+{{end}}
+
+<br>
+<div class="row">
+<h2> الوصف</h2>
+</div>
+<br>
+
+<div class="grid-x grid-margin-x">
+    <div class="cell shrink">
+      <label for="title" class="middle" style="font-weight: bold;">العنوان:
+        <span style="color: red;">*</span>
+      </label>
+    </div>
+     <div class="cell small-12 medium-8 large-6">
+      <input type="text"  name="title" id = "title" value="{{.Title}}" placeholder="عنوان التدوينة">
+     </div> 
+</div>
+
+<input type="hidden" id="htmlcontent" name="htmlcontent" value="{{.Article}}"> 
+
+<div class="grid-x grid-margin-x">
+      <div class="cell shrink">
+      <label for="link" class="middle" style="font-weight: bold;">الرابط: 
+        <span style="color: red;">*</span>
+      </label>
+    </div>
+      <div class="cell small-12 medium-5 large-3">
+      <input type="text"  name="link" id = "link" value="{{.Link}}" placeholder="حروف و أرقام انجليزية">
+     </div>
+</div>
+<div class="grid-x grid-margin-x">
+
+      <div class="cell shrink">
+      <label for="pdate" class="middle"  style="font-weight: bold;">تاريخ النشر: 
+        <span style="color: red;">*</span>
+      </label>
+    </div>
+       <div class="cell small-12 medium-3 large-2">
+      <input type="text"  name="pdate" id = "pdate" value="{{.Pdate}}" placeholder="yyyy-mm-dd">
+     </div> 
+
+       <div class="cell shrink">
+      <label for="ludate" class="middle"  style="font-weight: bold;"> تاريخ التحديث: </label>
+    </div>
+       <div class="cell small-12 medium-3 large-2">
+      <input type="text"  name="ludate" id = "ludate" value="{{.Ludate}}" placeholder="yyyy-mm-dd">
+     </div> 
+
+</div>
+
+<div class="grid-x grid-margin-x">
+
+      <div class="cell shrink">
+      <label for="cat1" class="middle"  style="font-weight: bold;">القسم ١: </label>
+    </div>
+
+       <div class="cell small-12 medium-2 large-2">
+  <input type="text"  name="cat1" id = "cat1" value="{{.Cat1}}" placeholder="اختياري">     
+</div> 
+
+  <div class="cell shrink">
+      <label for="cat2" class="middle"  style="font-weight: bold;">القسم ٢: </label>
+    </div>
+
+       <div class="cell small-12 medium-2 large-2">
+      <input type="text"  name="cat2" id = "cat2" value="{{.Cat2}}" placeholder="اختياري">
+     </div>
+
+       <div class="cell shrink">
+      <label for="cat3" class="middle"  style="font-weight: bold;">القسم ٣: </label>
+    </div>
+
+       <div class="cell small-12 medium-2 large-2">
+      <input type="text"  name="cat3" id = "cat3" value="{{.Cat3}}" placeholder="اختياري">
+     </div> 
+</div>
+
+<div class="grid-x grid-margin-x">
+
+<div class="cell shrink">
+      <label for="excer" class="middle" style="font-weight: bold;">الملخص:
+        <span style="color: red;">*</span> 
+      </label>
+   </div>
+  <div class="cell small-12 medium-10 large-8">
+ <textarea  type="text" name="excer" rows="3" id ="excer" placeholder="ملخص للتدوينة كحد أقصى ٣ أسطر">{{.Excer}}</textarea>
+  </div> 
+</div> 
+
+<br>
+<div class="row">
+<h2> المحتوى</h2>
+</div>
+<br>
+
+<div dir="ltr" class="grid-x">
+  <div class="cell small-12 medium-12 large-12">
+     <div id="app"></div>
+  </div> 
+</div> 
+<br>
+
+
+<div class="grid-x align-center" style="text-align:center">
+  <div class=" cell small-12 medium-7 large-6 expanded button-group">
+     <button  type="button" id="previewbutton" class="secondary large button" style="color:white;">معاينة</button> 
+     <button type="button" data-open="postmodal" class="large button" style="color:white;">تحديث</button>  
+     <button type="button" data-open="deletemodal" class="alert large button">حذف</button>  
+</div>
+</div>
+
+<div class="reveal" id="postmodal" data-reveal>
+  <h1>تحديث التدوينة</h1>
+  <p class="lead">سيتم تحديث التدوينة. هل أنت متأكد؟</p>
+  <div class="button-group expanded large">
+   <button type="submit" id="addpostB"  class="success large button" style="color:white; margin-left:  1rem;"> نعم، قم بالتحديث</button>
+   <button class="secondary large button" style="margin-left:1rem;color:white;" data-close aria-label="Close modal" type="button"> إلغاء</button>
+</div>
+</div>
+
+<div class="reveal" id="deletemodal" data-reveal>
+  <h1>حذف التدوينة</h1>
+  <p class="lead">سيتم حذف التدوينة. هل أنت متأكد؟</p>
+  <div class="button-group expanded large">
+   <button onclick="document.getElementById('deletepostform').submit()"  class="alert large button" style="color:white; margin-left:  1rem;" data-close aria-label="Close modal" type="button">نعم، قم بالحذف</button>
+   <button class="secondary large button" style="margin-left:1rem;color:white;" data-close aria-label="Close modal" type="button"> إلغاء</button>
+</div>
+</div>
+
+</div>
+ {{ template "footer.html" . }}   
+ {{ template "loadjs.html" . }}   
+    <script src="/static/js/editor_ar.js"></script>
+    <input type="hidden" name="formToken" value={{.FormToken}}>
+
+</form> 
+
+<form id="previewform" role="form"  target="_blank" action="/preview/" method="POST" autocomplete="off" novalidate>
+  <input type="hidden" id="htmlcontent_preview" name="htmlcontent_preview" value="{{.Article}}"> 
+  <input type="hidden"  name="title_preview" id = "title_preview" value="{{.Title}}">
+  <input type="hidden"  name="pdate_preview" id = "pdate_preview" value="{{.Pdate}}">
+  <input type="hidden"  name="ludate_preview" id = "ludate_preview" value="{{.Ludate}}">
+  <input type="hidden" name="formToken" value={{.FormToken}}>
+
+</form>
+
+<form id="deletepostform" role="form" action="/delete/" method="POST" autocomplete="off" novalidate>
+    <input type="hidden"  name="t_id_delete" id = "t_id_delete" value="{{ .T_id}}">
+    <input type="hidden" name="formToken" value={{.FormToken}}>
+
+</form>
+</body>
+</html>

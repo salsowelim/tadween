@@ -1,0 +1,40 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+<head itemscope itemtype="http://schema.org/WebSite">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title> Blog </title>
+   {{ template "loadcss.html" . }}
+</head>
+<body>
+   {{ template "top-bar.html" . }}   
+<div class="grid-container fluid">
+<div class="grid-x grid-margin-x">
+  <div class="cell small-12 medium-8 large-10">
+    <div class="row">
+      <h2> Last Posts</h2>
+       <div style="border-bottom: 1px solid #cccccc;width: 5em;"> </div>
+    </div>
+
+    <div class = "row" style="margin-top: 0.5em;">
+     {{ .List}}   
+</div>
+</div>
+
+  <div class="cell small-12 medium-4 large-2">  
+    <div class="row">
+       <h2> Categories</h2>
+        <div style="border-bottom: 1px solid #cccccc;width: 5em;"> </div>
+    </div>
+  <div class = "row" style="margin-top: 0.5em;">
+    {{ .Cats }}
+    </div>
+  </div>
+  
+</div>
+</div>
+<br>
+   {{ template "footer.html" . }}  
+<!-- placed at the end for faster loading -->
+   {{ template "loadjs.html" . }}    
+</body>
+</html>

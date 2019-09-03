@@ -1,0 +1,73 @@
+<!doctype html>
+<html dir="ltr">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <head>
+  <title> Login </title>
+   {{ template "loadcss.html" . }}
+</head>
+
+<body>
+<br>
+<div class="grid-container" >
+<!-- https://foundation.zurb.com/building-blocks/blocks/form-login.html -->
+<form id="loginform" class="loginform" style="" role="form" method="POST">
+<div class="grid-x align-center">
+  <div class="shrink cell">
+<h1 class="">Please Sign In</h1>
+</div>
+</div>
+{{if .IsError}}
+<div class="grid-x align-center">
+<div class="cell small-12 medium-8 large-5">
+<div class="callout alert" style="font-size: 90%;">
+ <h5> Error </h5>
+  <strong> {{ .ErrorMsg}}  </strong>
+</div>
+</div>
+</div>
+{{end}}
+
+
+<div class="grid-x align-center">
+     <div class="cell small-11 medium-4 large-3">
+  <label>Username
+    <input type="text" name="username" placeholder="Username">
+  </label>
+</div>
+</div>
+<div class="grid-x align-center">
+     <div class="cell small-11 medium-4 large-3">
+  <label>Password
+    <input type="password" name="password" placeholder="Password">
+  </label>
+</div>
+</div>
+
+
+<div class="grid-x align-center">
+     <div class="cell small-11 medium-4 large-3">
+  <p><input type="submit" class="button expanded" value="Sign In"></input></p>
+</div>
+</div>
+<br>
+</form>
+
+<div class="grid-x align-center">
+  <div class="shrink cell">
+<h2 class="center-text"> or </h2>
+</div>
+</div>
+
+<div class="grid-x align-center">
+  <div class="shrink cell">
+<a href="/"> Go to Homepage</a>
+</div>
+</div>
+
+
+</div>
+   {{ template "footer.html" . }}  
+<!-- placed at the end for faster loading -->
+ {{ template "loadjs.html" . }}   
+</body>
+</html>

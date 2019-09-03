@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Redirecting...</title>
+    <meta http-equiv="Cache-Control" content="private, no-cache, must-revalidate, max-age=0" />
+    <script>
+      function onload() {
+        var hostname = document.location.hostname;
+        var destination = (hostname === 'react-rte.org') ? '/demo' : '/demo.html';
+        location.replace(destination);
+      }
+    </script>
+  </head>
+  <body onload="onload()">
+    <noscript><p>Redirecting...</p></noscript>
+  </body>
+</html>

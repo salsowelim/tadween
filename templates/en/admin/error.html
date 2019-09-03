@@ -1,0 +1,25 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title> Error | Page not found</title>
+   {{ template "loadcss.html" . }}
+</head>
+<body>
+   {{ template "top-bar.html" . }}   
+ <div class="expanded column row regtype">
+<div class="row">
+	 <font color="red" style="font-size:100%;">
+<h3 style="" color="red"><b>خطأ</b></h3>
+    </font>
+</div>
+<div class="row"> 
+<p> Page not found. Make sure the URL is valid.</p>
+</div>
+
+</div>
+   {{ template "footer.html" . }}  
+<!-- placed at the end for faster loading -->
+   {{ template "loadjs.html" . }}    
+</body>
+</html>
