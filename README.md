@@ -19,21 +19,12 @@
 - Built using fairly modern tools (golang, react, foundation). Things like **responsiveness and https are supported out of the box**.
 - Built-in **support for both RTL and LTR**. (Arabic and English are supported. if you want to add another language see the instructions below.)
 
-## Demo
-- Admin [control panel](http://35.158.0.91:6060/login/) (username and password: admin).
-- The [actual blog](http://35.158.0.91:6060)
-
- Content is wiped every 15 minutes.
- 
- ([Arabic demo](http://35.158.0.91:5050/login/) also available).
-
 ## Main Tools and Dependencies:
 - Golang: for running server code (tested on versions >= 1.10).
 - Foundation (v6) for web pages aesthetics and functionality.
 - Javascript (jquery-react) for web functionality such as the text editor.
 - [react-rte](https://github.com/sstur/react-rte) wysiwyg editor.
 - SQLite: for storage.
-
 
 ## Server code (tadween.go)
 
@@ -92,9 +83,8 @@ Back in 2016 I had a hard time finding a blogging platform with rich text editor
 
 Apparently such choices fits more as a full CMS rather than personal use. So making a new one was my way to go. And then a decision to extend it and open source it was made.
 
-## Final notes & Future Work
-- **This is an alpha grade, initial release**.  Testing is needed from security perspective to ensure no major vulnerabilities. Moreover, there is definitely room for improvements especially for the text editor. While the draftjs project is well maintained, open-sourced editors that are built on top of it are not.
-- I have plans of supporting this project in the long run (if it gets enough attention). The next to-do features to add (on top of my head) is to support draft posts, and improving the editor by fixing some known bugs and adding things like footnotes. Hint: tadween is more towards formal writing.
+## Final note
+**This is an alpha grade, initial release**.  Testing is needed from security perspective to ensure no major vulnerabilities. Moreover, there is definitely room for improvements especially for the text editor. While the draftjs project is well maintained, open-sourced editors that are built on top of it are not.
 
 ## Appendix: React text editor project  
 react-rte contains almost a clone of its [github repository](https://github.com/sstur/react-rte). I have added a couple of files that manipulate some html element within tadween (editor_en.js, editor_ar.js). You can start from there for editor customization. use "npm run-script build" to transpile those files to functional js. It will be ready at /dist/
